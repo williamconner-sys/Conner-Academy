@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://conner.academy/sitemap.xml
