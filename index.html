@@ -128,28 +128,31 @@
 </section>
 
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <section>
-      <img src="/assets/logo.png" alt="Conner Academy crest" width="80" height="80" style="display:block;margin:0 0 .6rem 0;opacity:.95">
-      <h3>Conner Academy of Discovery &amp; Learning</h3>
-      <p class="muted">Virtus • Sapientia • Concordia</p>
-    </section>
-    <section>
-      <h4>Contact</h4>
-      <ul>
-        <li>Email: <a href="mailto:admissions@conner.academy">admissions@conner.academy</a></li>
-      </ul>
-    </section>
-    <section>
-      <h4>Visit</h4>
-      <ul>
-        <li>Visits by appointment</li>
-        <li>Preview Day: first Saturday of each month</li>
-      </ul>
-    </section>
+  <div class="page">
+    <!-- centered crest -->
+    <div style="display:flex;justify-content:center;margin:0 0 .6rem 0;">
+      <img src="/assets/logo.png" alt="Conner Academy crest" width="80" height="80" style="opacity:.95">
+    </div>
+
+    <!-- 3-column layout: empty | center text | contact -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;">
+      <div></div>
+      <section style="text-align:center">
+        <h3 style="margin:0 0 .25rem 0;">Conner Academy of Discovery &amp; Learning</h3>
+        <p class="muted" style="margin:0;">EX VIRTUTE, SAPIENTIA, CONCORDIA HUMANITAS ORITUR</p>
+      </section>
+      <section>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: <a href="mailto:admissions@conner.academy">admissions@conner.academy</a></li>
+        </ul>
+      </section>
+    </div>
   </div>
+
   <p class="copyright">© <span id="year"></span> Conner Academy • All rights reserved</p>
 </footer>
+
 
 
 <script src="/script.js"></script>
