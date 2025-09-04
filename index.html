@@ -128,13 +128,13 @@
 </section>
 
 <footer class="site-footer" role="contentinfo">
-  <div class="page">
-    <!-- centered crest -->
-    <div style="display:flex;justify-content:center;margin:0 0 .6rem 0;">
-      <img src="/assets/logo.png" alt="Conner Academy crest" width="80" height="80" style="opacity:.95">
+  <div class="page" style="padding-top:1.25rem;padding-bottom:0;">
+    <!-- crest centered -->
+    <div style="display:flex;justify-content:center;margin:0 0 .75rem 0;">
+      <img src="/assets/logo.png" alt="Conner Academy crest" width="64" height="64" style="opacity:.95">
     </div>
 
-    <!-- 3-column layout: empty | center text | contact -->
+    <!-- three columns: empty | center text | contact -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;">
       <div></div>
       <section style="text-align:center">
@@ -144,16 +144,17 @@
       <section>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:admissions@conner.academy">admissions@conner.academy</a></li>
+          <li>Email: <a href="mailto:admissions@conner.academy">admissions@conner.academy</a></li>
         </ul>
       </section>
     </div>
   </div>
 
-  <p class="copyright">© <span id="year"></span> Conner Academy • All rights reserved</p>
+  <!-- bottom line, left aligned -->
+  <div class="page" style="padding-top:.75rem;">
+    <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
+  </div>
 </footer>
-
-
 
 <script src="/script.js"></script>
 </body>
