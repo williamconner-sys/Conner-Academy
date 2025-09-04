@@ -129,26 +129,28 @@
 
 <footer class="site-footer" role="contentinfo">
   <div class="page" style="padding:1rem 0;">
-    <div style="display:grid;grid-template-columns:1fr 1fr auto;align-items:end;gap:.5rem;">
-      <!-- Left: copyright (baseline even with motto) -->
-      <div style="text-align:left;align-self:end;">
-        <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
-      </div>
-
-        <!-- Center: crest + name + motto -->
-      <div style="text-align:center;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto;align-items:end;gap:.25rem;">
+      <!-- row 1 -->
+      <div style="grid-column:1;grid-row:1;"></div>
+      <div style="grid-column:2;grid-row:1;text-align:center;">
         <img src="/assets/logo.png" alt="Conner Academy crest" width="56" height="56"
-             style="display:block;margin:0 auto .4rem;opacity:.95">
+             style="display:block;margin:0 auto .35rem;opacity:.95">
         <h3 style="margin:0;">Conner Academy</h3>
-        <p class="muted" style="margin:.15rem 0 0 0;">Virtus • Sapientia • Concordia</p>
       </div>
-
-      <!-- Right: Contact label directly above email (left edges aligned) -->
-      <div style="justify-self:end;">
+      <!-- right column spans two rows so "Contact:" sits directly above the email and left edges align -->
+      <div style="grid-column:3;grid-row:1 / span 2;justify-self:end;">
         <div style="display:inline-block;text-align:left;">
           <p style="margin:0;">Contact:</p>
           <p style="margin:.15rem 0 0 0;"><a href="mailto:admissions@conner.academy">admissions@conner.academy</a></p>
         </div>
+      </div>
+
+      <!-- row 2 -->
+      <div style="grid-column:1;grid-row:2;text-align:left;">
+        <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
+      </div>
+      <div style="grid-column:2;grid-row:2;text-align:center;">
+        <p class="muted" style="margin:0;">Virtus • Sapientia • Concordia</p>
       </div>
     </div>
   </div>
