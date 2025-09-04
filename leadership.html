@@ -2,80 +2,208 @@
 <html lang="en">
 <head>
   <title>Leadership • Conner Academy</title>
-  <meta name="description" content="Faculty who are scholars, mentors, and craftsmen of the learning experience.">
-  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico?v=5" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico?v=5">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-<link rel="manifest" href="/icons/site.webmanifest">
-<meta name="theme-color" content="#0b0b0c">
-<meta property="og:image" content="/assets/og-image.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Conner Academy">
-<link rel="preload" href="/assets/logo.png" as="image">
-<link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Leaders who model scholarship, character, and clarity. Faculty who teach with craft and care.">
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Icons / manifest -->
+  <link rel="icon" href="/favicon.ico?v=5" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=5">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Conner Academy">
+  <link rel="preload" href="/assets/logo.png" as="image">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Page-specific layout and mobile tweaks -->
+  <style>
+    .tiles { display:grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .tile  { border:1px solid var(--line); border-radius:14px; padding:1rem; background:rgba(255,255,255,.02); }
+    .tile h3 { margin-top:.25rem; }
+    .pill { display:inline-block; font-size:.9rem; padding:.25rem .55rem; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.03); }
+    .grid-3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .card   { border:1px solid var(--line); border-radius:14px; padding:1rem; background:rgba(255,255,255,.02); }
+    .checklist.compact li { margin-bottom:.3rem; }
+
+    @media (max-width: 1000px){
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 780px){
+      .tiles { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .page { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    /* === MOBILE FOOTER: centered stack, keeps desktop the same === */
+    @media (max-width: 700px) {
+      .site-footer .page > div[style*="grid-template-columns"]{
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        text-align:center !important;
+        gap:.4rem !important;
+      }
+      .site-footer .page > div[style*="grid-template-columns"] > div:first-child{ display:none !important; }
+      /* Order: logo+name → motto → Contact → email → copyright */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(2){ order:1; }
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(5){ order:2; }
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3){ order:3; }
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(6){ order:4; }
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(4){ order:5; }
+      .site-footer .page p { margin:.1rem 0; }
+      .site-footer .page img { margin-bottom:.35rem !important; }
+    }
+  </style>
 </head>
 <body>
-  
+
 <header class="site-header" role="banner">
   <a class="brand" href="/">
     <img src="/assets/logo.png" width="44" height="44" alt="Conner Academy crest">
     <span class="brand-text">Conner Academy</span>
   </a>
   <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-<nav class="main-nav" aria-label="Primary">
-  <a href="/academics.html">Academics</a>
-  <a href="/admissions.html">Admissions</a>
-  <a href="/campus.html">Campus Life</a>
-  <a href="/leadership.html">Leadership</a>
-  <a href="/standards.html">Standards</a>
-  <a class="cta" href="/contact.html">Contact</a>
-</nav>
+  <nav class="main-nav" aria-label="Primary">
+    <a href="/academics.html">Academics</a>
+    <a href="/admissions.html">Admissions</a>
+    <a href="/campus.html">Campus Life</a>
+    <a href="/leadership.html" aria-current="page">Leadership</a>
+    <a href="/standards.html">Standards</a>
+    <a class="cta" href="/contact.html">Contact</a>
+  </nav>
 </header>
 
-  <main class="page">
-    <h1>Leadership</h1>
-    <p class="lead">Dedicated faculty and staff model the scholarship, curiosity, and character we cultivate.</p>
-    <div class="grid-2">
-      <section>
-        <h2>Head of School</h2>
-        <p>Leads with clarity and kindness, aligning the mission with daily practice and long‑term strategy.</p>
-      </section>
-      <section>
-        <h2>Academic Deans</h2>
-        <p>Humanities, STEM, Arts, and Student Life—each stewarding curriculum, mentorship, and outcomes.</p>
-      </section>
-    </div>
-    <p class="muted">Faculty bios and board list available upon request.</p>
-  </main>
-  
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <section>
-      <h3>Conner Academy of Discovery &amp; Learning</h3>
-      <p class="muted">Excellence • Curiosity • Character</p>
-    </section>
-    <section>
-      <h4>Contact</h4>
-      <ul>
-        <li>Email: <a href="mailto:admissions@conner.academy">admissions@conner.academy</a></li>
-      </ul>
-    </section>
-    <section>
-      <h4>Visit</h4>
-      <ul>
-        <li>By appointment only</li>
-        <li>Open House: First Saturday each month</li>
-      </ul>
-    </section>
-  </div>
-  <p class="copyright">© <span id="year"></span> Conner Academy • All rights reserved</p>
-</footer>
-<script src="/script.js"></script>
+<main class="page">
+  <h1>Leadership</h1>
+  <p class="lead">Leadership is service, clarity, and example. We teach with craft, care, and conviction.</p>
 
-</body></html>
+  <!-- Leadership Philosophy -->
+  <section class="card" style="margin-bottom:1.25rem;">
+    <h2>Leadership Philosophy</h2>
+    <p>We lead by aligning mission and daily practice. We set clear goals, coach with kindness, measure what matters, and model the scholarship and character we ask of students.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem .6rem;">
+      <span class="pill">Clarity</span>
+      <span class="pill">Consistency</span>
+      <span class="pill">Craft</span>
+      <span class="pill">Care</span>
+    </div>
+  </section>
+
+  <!-- Roles and Responsibilities -->
+  <section style="margin-bottom:1.25rem;">
+    <h2>Roles and Responsibilities</h2>
+    <div class="tiles">
+      <div class="tile">
+        <h3>Head of School</h3>
+        <p>Stewards mission, safety, culture, and long range planning. Coaches faculty and partners with families.</p>
+      </div>
+      <div class="tile">
+        <h3>Dean of Academics</h3>
+        <p>Leads curriculum, assessment, and professional learning. Ensures mastery, depth, and coherence across grades.</p>
+      </div>
+      <div class="tile">
+        <h3>Dean of Students</h3>
+        <p>Supports habits, character, and care systems. Guides advisory, attendance, and student life.</p>
+      </div>
+      <div class="tile">
+        <h3>Director of Arts &amp; Athletics</h3>
+        <p>Builds programs that develop skill, discipline, and joy in performance and sport.</p>
+      </div>
+      <div class="tile">
+        <h3>Operations &amp; Safety</h3>
+        <p>Manages calendars, communication, records, and safety procedures.</p>
+      </div>
+      <div class="tile">
+        <h3>Faculty</h3>
+        <p>Design rich lessons, give clear feedback, and form students in virtue, wisdom, and harmony.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Profile and Development -->
+  <section style="margin-bottom:1.25rem;">
+    <h2>Faculty Profile</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>What We Value</h3>
+        <ul class="checklist compact">
+          <li>Strong content knowledge and love of learning</li>
+          <li>Clear instruction and high expectations</li>
+          <li>Warmth, patience, and calm authority</li>
+          <li>Team mindset and steady communication</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Professional Growth</h3>
+        <ul class="checklist compact">
+          <li>Mentoring and lesson study</li>
+          <li>Observation with timely feedback</li>
+          <li>Shared planning and unit design</li>
+          <li>Workshops and certifications by need</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Safeguarding</h3>
+        <ul class="checklist compact">
+          <li>Background checks completed</li>
+          <li>Annual safety training</li>
+          <li>Clear boundaries and supervision</li>
+          <li>Emergency readiness and drills</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Governance and Communication -->
+  <section class="card">
+    <h2>Governance and Communication</h2>
+    <ul class="checklist compact">
+      <li>Mission oversight and annual goals</li>
+      <li>Transparent policies in a Family Handbook</li>
+      <li>Regular progress updates and conferences</li>
+      <li>Responsive email within one business day</li>
+    </ul>
+    <p class="muted">See <a class="link" href="/standards.html">Standards</a> for Honor Code and Community Standards.</p>
+  </section>
+</main>
+
+<!-- Perfected footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="page" style="padding:1rem 0;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;column-gap:56px;row-gap:.25rem;align-items:end;">
+      <!-- Row 1 -->
+      <div></div>
+      <div style="text-align:center;">
+        <img src="/assets/logo.png" alt="Conner Academy crest" width="56" height="56"
+             style="display:block;margin:0 auto .35rem;opacity:.95">
+        <h3 style="margin:0;">Conner Academy</h3>
+      </div>
+      <div style="text-align:left;">
+        <p style="margin:0;">Contact:</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div style="text-align:right;">
+        <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
+      </div>
+      <div style="text-align:center;">
+        <p class="muted" style="margin:0;">Virtus • Sapientia • Concordia</p>
+      </div>
+      <div style="text-align:left;">
+        <p style="margin:0;"><a href="mailto:admissions@conner.academy">admissions@conner.academy</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
