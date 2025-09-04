@@ -25,23 +25,20 @@
 
   <!-- Small style additions to make the hero a split layout -->
   <style>
-    .hero { border-bottom: 1px solid var(--line); }
-    .hero .split { grid-template-columns: .8fr 1.2fr; align-items: center; }
-    .hero .hero-copy h1 { font-size: clamp(38px, 7vw, 74px); line-height: 1.02; margin: 0 0 .5rem; }
-    .hero .hero-copy .lead { font-size: 1.15rem; }
-    .panel-crest { display:flex; justify-content:center; align-items:center; min-height: 260px; }
-    .crest-xl { width: 240px; height: auto; border-radius: 20px;
-      background: linear-gradient(180deg, rgba(213,183,123,.22), rgba(213,183,123,.06));
-      border: 1px solid var(--line); padding: 14px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.28);
-    }
-    .motto { color: var(--muted); margin-top: .2rem; font-size: .95rem; letter-spacing: .2px; }
-    @media (max-width: 900px) {
-      .hero .split { grid-template-columns: 1fr; gap: 1rem; }
-      .panel-crest { min-height: 0; }
-      .crest-xl { width: 180px; }
-    }
-  </style>
+  .hero { border-bottom: 1px solid var(--line); }
+  .hero .split { display:grid; grid-template-columns: .9fr 1.1fr; gap: 1.2rem; align-items:center; }
+  .crest-wrap { display:flex; justify-content:center; }
+  .crest-xl { width: 320px; height:auto; }
+  .hero .hero-copy { text-align:center; }
+  .hero .hero-copy h1 { font-size: clamp(40px, 7.2vw, 78px); line-height: 1.04; margin: 0 0 .5rem; }
+  .hero .hero-copy .of { font-size: clamp(22px, 3.4vw, 30px); letter-spacing: .06em; color: var(--muted); }
+  .hero-ctas { justify-content: center; }
+  @media (max-width: 900px){
+    .hero .split { grid-template-columns: 1fr; }
+    .crest-xl { width: 220px; }
+  }
+</style>
+
 </head>
 <body>
 
@@ -64,14 +61,14 @@
 <section class="hero" role="region" aria-label="Hero">
   <div class="page">
     <div class="split">
-      <div class="panel panel-crest">
+      <div class="crest-wrap">
         <img class="crest-xl" src="/assets/logo.png" alt="Conner Academy crest">
       </div>
       <div class="hero-copy">
-        <h1>Conner Academy of<br>Discovery &amp; Learning</h1>
-        <p class="lead">A selective K–12 academy where excellence is habit, mastery is expected, and character leads.</p>
+        <h1>Conner Academy<br><span class="of">of</span><br>Discovery &amp; Learning</h1>
+        <p class="lead">A selective K–12 academy where rigor is joyful and excellence is a daily habit.</p>
         <p class="motto">EX VIRTUTE, SAPIENTIA, CONCORDIA HUMANITAS ORITUR</p>
-        <div class="hero-ctas" style="margin-top:1rem">
+        <div class="hero-ctas">
           <a class="btn" href="/academics.html">Curriculum</a>
           <a class="btn ghost" href="/contact.html">Contact</a>
         </div>
