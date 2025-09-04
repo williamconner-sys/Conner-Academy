@@ -24,28 +24,41 @@
   <link rel="stylesheet" href="/styles.css">
 
   <!-- Small style additions to make the hero a split layout -->
-  <style>
-  .hero { border-bottom: 1px solid var(--line); }
-  .hero .split { display:grid; grid-template-columns: .9fr 1.1fr; gap: 1.2rem; align-items:center; }
-  .crest-wrap { display:flex; justify-content:center; }
-  .crest-xl { width: 320px; height:auto; }
-  .hero .hero-copy { text-align:center; }
-  .hero .hero-copy h1 { font-size: clamp(40px, 7.2vw, 78px); line-height: 1.04; margin: 0 0 .5rem; }
-  .hero .hero-copy .of { font-size: clamp(22px, 3.4vw, 30px); letter-spacing: .06em; color: var(--muted); }
-  .nowrap { white-space: nowrap; }
-  .hero-ctas { justify-content: center; }
-  @media (max-width: 900px){
-    .hero .split { grid-template-columns: 1fr; }
-    .crest-xl { width: 220px; }
-  }
-    /* ===== MOBILE FIXES ===== */
+<style>
+/* ===== HERO LAYOUT ===== */
+.hero { border-bottom: 1px solid var(--line); }
+.hero .split { display:grid; grid-template-columns: .9fr 1.1fr; gap: 1.2rem; align-items:center; }
+.crest-wrap { display:flex; justify-content:center; }
+.crest-xl { width: 320px; height:auto; }
+.hero .hero-copy { text-align:center; }
+
+/* Title: tighten lines and make spacing around "of" small & equal */
+.hero .hero-copy h1 { font-size: clamp(40px, 7.2vw, 78px); line-height: 1; margin: 0; }
+.hero .hero-copy h1 br { display:none; }       /* remove extra gaps from <br> */
+.hero .hero-copy h1 > span { display:block; }  /* each line on its own row */
+.hero .hero-copy .of {
+  font-size: clamp(22px, 3.4vw, 30px);
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin: 8px 0;                               /* small, symmetric space */
+}
+
+.nowrap { white-space: nowrap; }
+.hero-ctas { justify-content: center; }
+
+/* ===== TABLET ===== */
+@media (max-width: 900px){
+  .hero .split { grid-template-columns: 1fr; }
+  .crest-xl { width: 220px; }
+}
+
+/* ===== MOBILE (<=700px) ===== */
 @media (max-width: 700px) {
-  /* Hero: keep 3-line title tidy, center CTAs, scale crest */
+  /* Hero */
   .hero .split { display: grid; grid-template-columns: 1fr; gap: 1rem; }
   .crest-xl { width: 200px; height: auto; margin-inline: auto; }
-  .hero .hero-copy { text-align: center; }
-  .hero .hero-copy h1 { font-size: 36px; line-height: 1.08; }
-  .hero .hero-copy .of { font-size: 18px; letter-spacing: .06em; }
+  .hero .hero-copy h1 { font-size: 36px; line-height: 1; }
+  .hero .hero-copy .of { font-size: 18px; letter-spacing: .06em; margin: 6px 0; }
   .hero .hero-copy .lead { font-size: .98rem; max-width: 36ch; margin: .5rem auto 0; }
   .hero-ctas { justify-content: center; gap: .5rem; }
 
@@ -54,20 +67,11 @@
 
   /* “Far Above the Standard” split stacks */
   .showcase .split { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-}
-    /* Keep the Latin motto on one line on small screens */
-@media (max-width: 700px) {
-  .motto {
-    white-space: nowrap;
-    font-size: clamp(.72rem, 2.6vw, .95rem);
-    letter-spacing: .02em;
-    line-height: 1.05;
-  }
-}
 
-/* === MOBILE FOOTER: centered + correct order === */
-@media (max-width: 700px) {
-  /* Turn the footer grid into a centered vertical stack */
+  /* Keep the Latin motto on one line */
+  .motto { white-space: nowrap; font-size: clamp(.72rem, 2.6vw, .95rem); letter-spacing: .02em; line-height: 1.05; }
+
+  /* === MOBILE FOOTER: centered + correct order === */
   .site-footer .page > div[style*="grid-template-columns"] {
     display: flex !important;
     flex-direction: column !important;
@@ -75,40 +79,16 @@
     text-align: center !important;
     gap: .4rem !important;
   }
-
-  /* Hide the empty first cell if present */
-  .site-footer .page > div[style*="grid-template-columns"] > div:first-child {
-    display: none !important;
-  }
-
+  /* Hide empty first cell if present */
+  .site-footer .page > div[style*="grid-template-columns"] > div:first-child { display: none !important; }
   /* Order: logo+name → motto → Contact → email → copyright */
-  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(2) { order: 1; } /* crest + "Conner Academy" */
-  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(5) { order: 2; } /* motto */
-  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) { order: 3; } /* Contact: */
-  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(6) { order: 4; } /* email */
-  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(4) { order: 5; } /* © */
-
-  /* Tidy spacing */
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(2) { order: 1; }
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(5) { order: 2; }
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) { order: 3; }
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(6) { order: 4; }
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(4) { order: 5; }
   .site-footer .page p { margin: .1rem 0; }
   .site-footer .page img { margin-bottom: .35rem !important; }
-}
-    /* === Equal spacing around "of" in the hero title === */
-.hero .hero-copy h1 {
-  line-height: 1;          /* remove extra built-in line gap */
-  margin: 0;               /* no bottom margin on the whole H1 */
-}
-.hero .hero-copy h1 > span {
-  display: block;          /* put each line on its own row */
-}
-.hero .hero-copy .of {
-  /* keep your size/letter-spacing, add symmetric space above & below */
-  margin: clamp(12px, 1.6vw, 20px) 0;
-}
-
-/* Mobile tweak: keep the same equal spacing on small screens */
-@media (max-width:700px){
-  .hero .hero-copy h1 { line-height: 1; }
-  .hero .hero-copy .of { margin: 12px 0; }
 }
 </style>
 
