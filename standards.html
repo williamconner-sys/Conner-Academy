@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Honor Code and Community Standards • Conner Academy</title>
+  <meta name="description" content="Honor Code and Community Standards for a safe, orderly, and joyful learning environment.">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Icons / manifest -->
+  <link rel="icon" href="/favicon.ico?v=5" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=5">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Conner Academy">
+  <link rel="preload" href="/assets/logo.png" as="image">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Page-specific mobile tweaks (safe for desktop) -->
+  <style>
+    @media (max-width: 700px){
+      .page { padding-left: 1rem; padding-right: 1rem; }
+      .checklist li { margin-bottom:.35rem; }
+    }
+
+    /* Mobile footer: centered stack, matches other pages */
+    @media (max-width: 700px) {
+      .site-footer .page > div[style*="grid-template-columns"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: .4rem !important;
+      }
+      .site-footer .page > div[style*="grid-template-columns"] > div:first-child {
+        display: none !important;
+      }
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(2) { order: 1; } /* crest + name */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(5) { order: 2; } /* motto */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) { order: 3; } /* Contact: */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(6) { order: 4; } /* email */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(4) { order: 5; } /* © */
+      .site-footer .page p { margin:.1rem 0; }
+      .site-footer .page img { margin-bottom:.35rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <a class="brand" href="/">
+    <img src="/assets/logo.png" width="44" height="44" alt="Conner Academy crest">
+    <span class="brand-text">Conner Academy</span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="main-nav" aria-label="Primary">
+    <a href="/academics.html">Academics</a>
+    <a href="/admissions.html">Admissions</a>
+    <a href="/campus.html">Campus Life</a>
+    <a href="/leadership.html">Leadership</a>
+    <a href="/standards.html" aria-current="page">Standards</a>
+    <a class="cta" href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Honor Code and Community Standards</h1>
+  <p class="lead">We learn with integrity, respect, and responsibility. These standards guide our daily life together.</p>
+
+  <section>
+    <h2>Honor Code</h2>
+    <p>Students at Conner Academy live with integrity. We tell the truth, do our own work, give proper credit, care for people and property, and strengthen the good name of our school.</p>
+    <ul class="checklist">
+      <li>Honesty in word and deed</li>
+      <li>Academic integrity without cheating or plagiarism</li>
+      <li>Respectful speech and conduct</li>
+      <li>Responsibility for materials and shared spaces</li>
+      <li>Courage to correct mistakes and make amends</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Community Standards</h2>
+    <p>We keep a safe, orderly, and joyful learning environment in every setting, including online work.</p>
+    <ul class="checklist">
+      <li>Prepared, punctual, and ready to learn</li>
+      <li>Phones and personal devices put away during study unless approved</li>
+      <li>Kind, clear communication with peers and adults</li>
+      <li>Responsible technology use and digital citizenship</li>
+      <li>Dress and appearance that are neat and appropriate to learning</li>
+    </ul>
+    <p class="muted">Full policies and procedures are provided upon enrollment in the Family Handbook.</p>
+  </section>
+</main>
+
+<!-- Perfected footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="page" style="padding:1rem 0;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;column-gap:56px;row-gap:.25rem;align-items:end;">
+      <!-- Row 1 -->
+      <div></div>
+      <div style="text-align:center;">
+        <img src="/assets/logo.png" alt="Conner Academy crest" width="56" height="56"
+             style="display:block;margin:0 auto .35rem;opacity:.95">
+        <h3 style="margin:0;">Conner Academy</h3>
+      </div>
+      <div style="text-align:left;">
+        <p style="margin:0;">Contact:</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div style="text-align:right;">
+        <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
+      </div>
+      <div style="text-align:center;">
+        <p class="muted" style="margin:0;">Virtus • Sapientia • Concordia</p>
+      </div>
+      <div style="text-align:left;">
+        <p style="margin:0;"><a href="mailto:admissions@conner.academy">admissions@conner.academy</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
