@@ -54,16 +54,43 @@
 
   /* “Far Above the Standard” split stacks */
   .showcase .split { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-
-  /* Footer: stack neatly, center everything, keep logo centered */
-  .site-footer .page > div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-    justify-items: center !important;
-    row-gap: .35rem !important;
+}
+    /* Keep the Latin motto on one line on small screens */
+@media (max-width: 700px) {
+  .motto {
+    white-space: nowrap;
+    font-size: clamp(.72rem, 2.6vw, .95rem);
+    letter-spacing: .02em;
+    line-height: 1.05;
   }
-  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) {
-    justify-self: center !important;
-    text-align: center !important;
+}
+
+/* Clean, readable footer on mobile (stacked, centered, balanced) */
+@media (max-width: 700px) {
+  /* Turn your inline grid into a tidy vertical stack on phones */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    text-align: center;
+  }
+
+  /* Hide the empty placeholder cell */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(1) {
+    display: none !important;
+  }
+
+  /* Order pieces for clarity: crest/name → motto → copyright → Contact → email */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(2) { order: 1; } /* crest + Conner Academy */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(5) { order: 2; } /* motto */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(4) { order: 3; } /* copyright */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(3) { order: 4; margin-top:.25rem; } /* Contact: */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(6) { order: 5; } /* email */
+
+  /* Tighten paragraph spacing so it doesn't look jumbled */
+  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] p {
+    margin: .1rem 0;
   }
 }
 </style>
