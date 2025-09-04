@@ -3,25 +3,67 @@
 <head>
   <title>Academics • Conner Academy</title>
   <meta name="description" content="Rigorous, joyful learning that integrates humanities, sciences, arts, and technology.">
-  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico?v=5" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico?v=5">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-<link rel="manifest" href="/icons/site.webmanifest">
-<meta name="theme-color" content="#0b0b0c">
-<meta property="og:image" content="/assets/og-image.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Conner Academy">
-<link rel="preload" href="/assets/logo.png" as="image">
-<link rel="stylesheet" href="/styles.css">
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Icons / manifest -->
+  <link rel="icon" href="/favicon.ico?v=5" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=5">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Conner Academy">
+  <link rel="preload" href="/assets/logo.png" as="image">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Page-specific mobile tweaks (safe for desktop) -->
+  <style>
+    /* Grid & spacing on smaller screens */
+    @media (max-width: 900px){
+      .grid-2 { display:grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    }
+    @media (max-width: 700px){
+      .page { padding-left: 1rem; padding-right: 1rem; }
+      .badges { display:flex; flex-wrap:wrap; gap:.5rem .6rem; }
+      .badges span { margin:0; }
+      .checklist li { margin-bottom:.35rem; }
+      h1, h2 { line-height:1.15; }
+    }
+
+    /* === MOBILE FOOTER: centered + correct order (doesn't affect desktop) === */
+    @media (max-width: 700px) {
+      /* Turn the footer grid into a centered vertical stack */
+      .site-footer .page > div[style*="grid-template-columns"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: .4rem !important;
+      }
+      /* Hide the empty first cell */
+      .site-footer .page > div[style*="grid-template-columns"] > div:first-child {
+        display: none !important;
+      }
+      /* Order: logo+name → motto → Contact → email → copyright */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(2) { order: 1; } /* crest + Conner Academy */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(5) { order: 2; } /* motto */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) { order: 3; } /* Contact: */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(6) { order: 4; } /* email */
+      .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(4) { order: 5; } /* © */
+      .site-footer .page p { margin:.1rem 0; }
+      .site-footer .page img { margin-bottom:.35rem !important; }
+    }
+  </style>
 </head>
 <body>
-  
+
 <header class="site-header" role="banner">
   <a class="brand" href="/">
     <img src="/assets/logo.png" width="44" height="44" alt="Conner Academy crest">
@@ -29,7 +71,7 @@
   </a>
   <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   <nav class="main-nav" aria-label="Primary">
-    <a href="/academics.html">Academics</a>
+    <a href="/academics.html" aria-current="page">Academics</a>
     <a href="/admissions.html">Admissions</a>
     <a href="/campus.html">Campus Life</a>
     <a href="/leadership.html">Leadership</a>
@@ -37,69 +79,80 @@
   </nav>
 </header>
 
-  <main class="page">
-    <h1>Academics</h1>
-    <p class="lead">Depth before speed. Mastery before metrics. Curiosity, always.</p>
-    <div class="grid-2">
-      <section>
-        <h2>Lower School (K–5)</h2>
-        <ul class="checklist">
-          <li>Phonics to literature with daily read‑alouds</li>
-          <li>Singapore‑style mathematics</li>
-          <li>Lab science &amp; nature journals</li>
-          <li>Music, strings, studio art &amp; movement</li>
-          <li>Foundations in coding and robotics</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Middle School (6–8)</h2>
-        <ul class="checklist">
-          <li>Pre‑AP humanities seminars</li>
-          <li>Algebra through geometry with proofs</li>
-          <li>Experimental science &amp; engineering design</li>
-          <li>World languages with conversation labs</li>
-          <li>Entrepreneurship &amp; debate</li>
-        </ul>
-      </section>
-    </div>
+<main class="page">
+  <h1>Academics</h1>
+  <p class="lead">Depth before speed. Mastery before metrics. Curiosity, always.</p>
+
+  <div class="grid-2">
     <section>
-      <h2>Upper School (9–12)</h2>
-      <p>Honors and Advanced courses across humanities, mathematics, sciences, arts, and computing. Senior students complete a capstone with faculty mentorship, publication or public defense.</p>
-      <div class="badges">
-        <span>Honors &amp; AP pathway</span>
-        <span>Dual‑enrollment options</span>
-        <span>Research &amp; Internship tracks</span>
-      </div>
-    </section>
-    <section>
-      <h2>Advisory &amp; Learning Support</h2>
-      <p>Every student belongs to a faculty‑led advisory cohort focusing on executive function, wellness, and character. Dedicated learning specialists partner with families for individualized success plans.</p>
-    </section>
-    <p><a class="link" href="/admissions.html">Admissions &amp; placement →</a></p>
-  </main>
-  
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <section>
-      <h3>Conner Academy of Discovery &amp; Learning</h3>
-      <p class="muted">Excellence • Curiosity • Character</p>
-    </section>
-    <section>
-      <h4>Contact</h4>
-      <ul>
-        <li>Email: <a href="mailto:admissions@conner.academy">admissions@conner.academy</a></li>
+      <h2>Lower School (K–5)</h2>
+      <ul class="checklist">
+        <li>Phonics to literature with daily read-alouds</li>
+        <li>Singapore-style mathematics</li>
+        <li>Lab science &amp; nature journals</li>
+        <li>Music, strings, studio art &amp; movement</li>
+        <li>Foundations in coding and robotics</li>
       </ul>
     </section>
     <section>
-      <h4>Visit</h4>
-      <ul>
-        <li>By appointment only</li>
-        <li>Open House: First Saturday each month</li>
+      <h2>Middle School (6–8)</h2>
+      <ul class="checklist">
+        <li>Pre-AP humanities seminars</li>
+        <li>Algebra through geometry with proofs</li>
+        <li>Experimental science &amp; engineering design</li>
+        <li>World languages with conversation labs</li>
+        <li>Entrepreneurship &amp; debate</li>
       </ul>
     </section>
   </div>
-  <p class="copyright">© <span id="year"></span> Conner Academy • All rights reserved</p>
-</footer>
-<script src="/script.js"></script>
 
-</body></html>
+  <section>
+    <h2>Upper School (9–12)</h2>
+    <p>Honors and Advanced courses across humanities, mathematics, sciences, arts, and computing. Senior students complete a capstone with faculty mentorship, publication or public defense.</p>
+    <div class="badges">
+      <span>Honors &amp; AP pathway</span>
+      <span>Dual-enrollment options</span>
+      <span>Research &amp; Internship tracks</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Advisory &amp; Learning Support</h2>
+    <p>Every student belongs to a faculty-led advisory cohort focusing on executive function, wellness, and character. Dedicated learning specialists partner with families for individualized success plans.</p>
+  </section>
+
+  <p><a class="link" href="/admissions.html">Admissions &amp; placement →</a></p>
+</main>
+
+<!-- Perfected footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="page" style="padding:1rem 0;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;column-gap:56px;row-gap:.25rem;align-items:end;">
+      <!-- Row 1 -->
+      <div></div>
+      <div style="text-align:center;">
+        <img src="/assets/logo.png" alt="Conner Academy crest" width="56" height="56"
+             style="display:block;margin:0 auto .35rem;opacity:.95">
+        <h3 style="margin:0;">Conner Academy</h3>
+      </div>
+      <div style="text-align:left;">
+        <p style="margin:0;">Contact:</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div style="text-align:right;">
+        <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
+      </div>
+      <div style="text-align:center;">
+        <p class="muted" style="margin:0;">Virtus • Sapientia • Concordia</p>
+      </div>
+      <div style="text-align:left;">
+        <p style="margin:0;"><a href="mailto:admissions@conner.academy">admissions@conner.academy</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
