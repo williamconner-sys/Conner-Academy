@@ -129,26 +129,29 @@
 
 <footer class="site-footer" role="contentinfo">
   <div class="page" style="padding:1rem 0;">
-    <div style="display:grid;grid-template-columns:auto auto auto;justify-content:center;align-items:end;column-gap:56px;row-gap:.25rem;">
+    <!-- 3 equal tracks around a centered middle track -->
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;column-gap:56px;row-gap:.25rem;align-items:end;">
       <!-- Row 1 -->
       <div></div>
+      <!-- Center (always perfectly centered) -->
       <div style="text-align:center;">
         <img src="/assets/logo.png" alt="Conner Academy crest" width="56" height="56"
              style="display:block;margin:0 auto .35rem;opacity:.95">
         <h3 style="margin:0;">Conner Academy</h3>
       </div>
-      <div style="justify-self:start;text-align:left;">
+      <!-- Right label sits directly above the email with the same left edge -->
+      <div style="text-align:left;">
         <p style="margin:0;">Contact:</p>
       </div>
 
-      <!-- Row 2 (all on one line, even spacing from motto) -->
+      <!-- Row 2: all three items baseline-aligned with equal spacing from the motto -->
       <div style="text-align:right;">
         <p class="copyright" style="margin:0;">© <span id="year"></span> Conner Academy • All rights reserved</p>
       </div>
       <div style="text-align:center;">
         <p class="muted" style="margin:0;">Virtus • Sapientia • Concordia</p>
       </div>
-      <div style="justify-self:start;text-align:left;">
+      <div style="text-align:left;">
         <p style="margin:0;"><a href="mailto:admissions@conner.academy">admissions@conner.academy</a></p>
       </div>
     </div>
