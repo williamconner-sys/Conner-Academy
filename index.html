@@ -65,33 +65,32 @@
   }
 }
 
-/* Clean, readable footer on mobile (stacked, centered, balanced) */
+/* === MOBILE FOOTER: centered + correct order === */
 @media (max-width: 700px) {
-  /* Turn your inline grid into a tidy vertical stack on phones */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] {
+  /* Turn the footer grid into a centered vertical stack */
+  .site-footer .page > div[style*="grid-template-columns"] {
     display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    gap: .4rem;
-    text-align: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: .4rem !important;
   }
 
-  /* Hide the empty placeholder cell */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(1) {
+  /* Hide the empty first cell if present */
+  .site-footer .page > div[style*="grid-template-columns"] > div:first-child {
     display: none !important;
   }
 
-  /* Order pieces for clarity: crest/name → motto → copyright → Contact → email */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(2) { order: 1; } /* crest + Conner Academy */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(5) { order: 2; } /* motto */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(4) { order: 3; } /* copyright */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(3) { order: 4; margin-top:.25rem; } /* Contact: */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] > div:nth-child(6) { order: 5; } /* email */
+  /* Order: logo+name → motto → Contact → email → copyright */
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(2) { order: 1; } /* crest + "Conner Academy" */
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(5) { order: 2; } /* motto */
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) { order: 3; } /* Contact: */
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(6) { order: 4; } /* email */
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(4) { order: 5; } /* © */
 
-  /* Tighten paragraph spacing so it doesn't look jumbled */
-  .site-footer .page > div[style*="grid-template-columns:1fr auto 1fr"] p {
-    margin: .1rem 0;
-  }
+  /* Tidy spacing */
+  .site-footer .page p { margin: .1rem 0; }
+  .site-footer .page img { margin-bottom: .35rem !important; }
 }
 </style>
 
