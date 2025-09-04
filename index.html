@@ -38,8 +38,35 @@
     .hero .split { grid-template-columns: 1fr; }
     .crest-xl { width: 220px; }
   }
-</style>
+    /* ===== MOBILE FIXES ===== */
+@media (max-width: 700px) {
+  /* Hero: keep 3-line title tidy, center CTAs, scale crest */
+  .hero .split { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .crest-xl { width: 200px; height: auto; margin-inline: auto; }
+  .hero .hero-copy { text-align: center; }
+  .hero .hero-copy h1 { font-size: 36px; line-height: 1.08; }
+  .hero .hero-copy .of { font-size: 18px; letter-spacing: .06em; }
+  .hero .hero-copy .lead { font-size: .98rem; max-width: 36ch; margin: .5rem auto 0; }
+  .hero-ctas { justify-content: center; gap: .5rem; }
 
+  /* Pillars stack */
+  .cards { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+
+  /* “Far Above the Standard” split stacks */
+  .showcase .split { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Footer: stack neatly, center everything, keep logo centered */
+  .site-footer .page > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    row-gap: .35rem !important;
+  }
+  .site-footer .page > div[style*="grid-template-columns"] > div:nth-child(3) {
+    justify-self: center !important;
+    text-align: center !important;
+  }
+}
+</style>
 
 </head>
 <body>
