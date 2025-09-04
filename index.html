@@ -32,12 +32,14 @@
   .hero .hero-copy { text-align:center; }
   .hero .hero-copy h1 { font-size: clamp(40px, 7.2vw, 78px); line-height: 1.04; margin: 0 0 .5rem; }
   .hero .hero-copy .of { font-size: clamp(22px, 3.4vw, 30px); letter-spacing: .06em; color: var(--muted); }
+  .nowrap { white-space: nowrap; }
   .hero-ctas { justify-content: center; }
   @media (max-width: 900px){
     .hero .split { grid-template-columns: 1fr; }
     .crest-xl { width: 220px; }
   }
 </style>
+
 
 </head>
 <body>
@@ -65,7 +67,11 @@
         <img class="crest-xl" src="/assets/logo.png" alt="Conner Academy crest">
       </div>
       <div class="hero-copy">
-        <h1>Conner Academy<br><span class="of">of</span><br>Discovery &amp; Learning</h1>
+        <h1>
+  <span class="nowrap">Conner Academy</span><br>
+  <span class="of">of</span><br>
+  <span class="nowrap">Discovery &amp; Learning</span>
+</h1>
         <p class="lead">A selective K–12 academy where rigor is joyful and excellence is a daily habit.</p>
         <p class="motto">EX VIRTUTE, SAPIENTIA, CONCORDIA HUMANITAS ORITUR</p>
         <div class="hero-ctas">
