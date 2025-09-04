@@ -2,26 +2,49 @@
 <html lang="en">
 <head>
   <title>Conner Academy of Discovery &amp; Learning</title>
-  <meta name="description" content="A K–12 academy where advanced scholarship meets character and curiosity.">
-  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico?v=5" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico?v=5">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-<link rel="manifest" href="/icons/site.webmanifest">
-<meta name="theme-color" content="#0b0b0c">
-<meta property="og:image" content="/assets/og-image.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Conner Academy">
-<link rel="preload" href="/assets/logo.png" as="image">
-<link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="A high-expectation K–12 home school where excellence is a habit.">
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Icons / manifest -->
+  <link rel="icon" href="/favicon.ico?v=5" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=5">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Conner Academy">
+  <link rel="preload" href="/assets/logo.png" as="image">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Small style additions to make the hero a split layout -->
+  <style>
+    .hero { border-bottom: 1px solid var(--line); }
+    .hero .split { grid-template-columns: .8fr 1.2fr; align-items: center; }
+    .hero .hero-copy h1 { font-size: clamp(38px, 7vw, 74px); line-height: 1.02; margin: 0 0 .5rem; }
+    .hero .hero-copy .lead { font-size: 1.15rem; }
+    .panel-crest { display:flex; justify-content:center; align-items:center; min-height: 260px; }
+    .crest-xl { width: 240px; height: auto; border-radius: 20px;
+      background: linear-gradient(180deg, rgba(213,183,123,.22), rgba(213,183,123,.06));
+      border: 1px solid var(--line); padding: 14px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    }
+    .motto { color: var(--muted); margin-top: .2rem; font-size: .95rem; letter-spacing: .2px; }
+    @media (max-width: 900px) {
+      .hero .split { grid-template-columns: 1fr; gap: 1rem; }
+      .panel-crest { min-height: 0; }
+      .crest-xl { width: 180px; }
+    }
+  </style>
 </head>
 <body>
-  
+
 <header class="site-header" role="banner">
   <a class="brand" href="/">
     <img src="/assets/logo.png" width="44" height="44" alt="Conner Academy crest">
@@ -37,59 +60,73 @@
   </nav>
 </header>
 
-  <section class="hero" role="region" aria-label="Hero">
-    <div class="hero-inner">
-      <img src="/assets/logo.png" width="96" height="96" alt="" class="crest">
-      <h1>Conner Academy of<br>Discovery &amp; Learning</h1>
-      <p class="lead">High‑expectation K–12 education for families who believe excellence is a habit.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="/admissions.html">Apply</a>
-        <a class="btn ghost" href="/contact.html">Schedule a Tour</a>
+<!-- HERO: crest on the left, title on the right -->
+<section class="hero" role="region" aria-label="Hero">
+  <div class="page">
+    <div class="split">
+      <div class="panel panel-crest">
+        <img class="crest-xl" src="/assets/logo.png" alt="Conner Academy crest">
+      </div>
+      <div class="hero-copy">
+        <h1>Conner Academy of<br>Discovery &amp; Learning</h1>
+        <p class="lead">A high-expectation K–12 home school where excellence is a habit and learning is joyful.</p>
+        <p class="motto">VIRTUS • SAPIENTIA • CONCORDIA</p>
+        <div class="hero-ctas" style="margin-top:1rem">
+          <a class="btn" href="/academics.html">Curriculum</a>
+          <a class="btn ghost" href="/contact.html">Contact</a>
+        </div>
       </div>
     </div>
-  </section>
-  <section class="pillars">
+  </div>
+</section>
+
+<!-- PILLARS based on the motto under the tree -->
+<section class="pillars">
+  <div class="page">
     <h2>Our Pillars</h2>
     <div class="cards">
       <article class="card">
-        <h3>Scholarship</h3>
-        <p>Advanced placement from early mastery, Socratic seminars, and studio labs that push beyond state standards.</p>
+        <h3>Virtus — Virtue</h3>
+        <p>We practice habits of character every day: honesty, diligence, courage, gratitude, and service. Schoolwork is important, but who we become while doing it matters more.</p>
       </article>
       <article class="card">
-        <h3>Discovery</h3>
-        <p>Inquiry‑driven STEAM, original research, entrepreneurship, debate, and design thinking in every grade.</p>
+        <h3>Sapientia — Wisdom</h3>
+        <p>Mastery-based learning, living books, discussion, and making. We seek understanding—reading deeply, asking good questions, and explaining ideas clearly in speaking and writing.</p>
       </article>
       <article class="card">
-        <h3>Character</h3>
-        <p>Honor code, leadership practicums, service learning, and daily habits that build resilience and joy.</p>
+        <h3>Concordia — Harmony</h3>
+        <p>Peace in our home and joy in our studies. We work as a family team, keep rhythms that fit our household, and cultivate friendship, respect, and responsibility.</p>
       </article>
     </div>
-  </section>
-  <section class="showcase">
-    <div class="split">
-      <div>
-        <h2>Far Above the Standard</h2>
-        <p>Our vertically aligned curriculum exceeds national benchmarks by design, integrating classical humanities with modern computation, fine arts with entrepreneurship, and wellness with outdoor education.</p>
-        <ul class="checklist">
-          <li>Accelerated math tracks with proof‑based reasoning</li>
-          <li>Writing across the curriculum &amp; public speaking</li>
-          <li>Laboratory science from Kindergarten</li>
-          <li>World languages with immersion studios</li>
-          <li>Computer science, robotics, and data literacy</li>
-        </ul>
-        <a class="link" href="/academics.html">Explore Academics →</a>
-      </div>
-      <div class="panel">
-        <img src="/assets/logo.png" alt="Conner Academy crest" class="panel-img">
-      </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="split">
+    <div>
+      <h2>Far Above the Standard</h2>
+      <p>We blend classical humanities with modern science and technology, hands-on projects with nature study, and physical wellness with outdoor education.</p>
+      <ul class="checklist">
+        <li>Math with reasoning and proofs as skills develop</li>
+        <li>Great books &amp; narration, composition, and rhetoric</li>
+        <li>Laboratory science and nature journaling</li>
+        <li>World languages with conversation and culture</li>
+        <li>Computer science, robotics, and design</li>
+      </ul>
+      <a class="link" href="/academics.html">Explore Academics →</a>
     </div>
-  </section>
-  <section class="cta-wide">
-    <h2>Now Accepting Interest Forms</h2>
-    <p>Submit an interest form to receive admissions dates, preview days, and placement details.</p>
-    <a class="btn" href="/admissions.html">Admissions</a>
-  </section>
-  
+    <div class="panel">
+      <img src="/assets/logo.png" alt="Conner Academy crest" class="panel-img">
+    </div>
+  </div>
+</section>
+
+<section class="cta-wide">
+  <h2>Our Family, Our School</h2>
+  <p>We’re building a home school that is rigorous, joyful, and tailored to our children.</p>
+  <a class="btn" href="/contact.html">Ask a Question</a>
+</section>
+
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
     <section>
@@ -112,6 +149,7 @@
   </div>
   <p class="copyright">© <span id="year"></span> Conner Academy • All rights reserved</p>
 </footer>
-<script src="/script.js"></script>
 
-</body></html>
+<script src="/script.js"></script>
+</body>
+</html>
