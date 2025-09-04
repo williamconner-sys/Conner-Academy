@@ -92,6 +92,24 @@
   .site-footer .page p { margin: .1rem 0; }
   .site-footer .page img { margin-bottom: .35rem !important; }
 }
+    /* === Equal spacing around "of" in the hero title === */
+.hero .hero-copy h1 {
+  line-height: 1;          /* remove extra built-in line gap */
+  margin: 0;               /* no bottom margin on the whole H1 */
+}
+.hero .hero-copy h1 > span {
+  display: block;          /* put each line on its own row */
+}
+.hero .hero-copy .of {
+  /* keep your size/letter-spacing, add symmetric space above & below */
+  margin: clamp(12px, 1.6vw, 20px) 0;
+}
+
+/* Mobile tweak: keep the same equal spacing on small screens */
+@media (max-width:700px){
+  .hero .hero-copy h1 { line-height: 1; }
+  .hero .hero-copy .of { margin: 12px 0; }
+}
 </style>
 
 </head>
